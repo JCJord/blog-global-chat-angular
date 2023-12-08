@@ -1,0 +1,15 @@
+<form [formGroup]="registerForm" class="container mt-5">
+    <h1 class="mb-4">REGISTER</h1>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+    <div class="mb-3">
+      <app-text-input name="username" label="Username" ></app-text-input>
+    </div>
+    <div class="mb-3">
+      <app-password-input name="password" label="Password" ></app-password-input>
+    </div>
+
+    <app-primary-button [text]="'Submit'" [disabled]="registerForm.invalid" (click)="register()">
+    </app-primary-button>
+</form>

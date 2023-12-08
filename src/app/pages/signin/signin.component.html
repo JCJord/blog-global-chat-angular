@@ -1,0 +1,15 @@
+<form [formGroup]="loginForm" class="container mt-5">
+  <h1 class="mb-4">LOGIN</h1>
+    <div *ngIf="errorMessage" class="alert alert-danger" role="alert">
+      {{ errorMessage }}
+    </div>
+    <div class="mb-3">
+      <app-text-input name="username" label="Username" [validAlert]="false"></app-text-input>
+    </div>
+    
+    <div class="mb-3">
+      <app-password-input name="password" label="Password" [validAlert]="false"></app-password-input>
+    </div>
+    <app-primary-button [text]="'Login'" [disabled]="loginForm.invalid" (click)="login()">
+    </app-primary-button>
+</form>

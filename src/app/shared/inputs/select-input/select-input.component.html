@@ -1,0 +1,9 @@
+<div class="position-relative">
+    <select
+        class="form-select border-material p-2 select"
+        aria-label="Default select example"
+        [formControlName]="name"
+    >
+        <option *ngFor="let option of options; let i = index; trackBy: optionIdentifier" value="{{ option.value }}">{{ option.label }}</option>
+    </select>
+</div>

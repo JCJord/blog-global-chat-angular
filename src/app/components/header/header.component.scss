@@ -1,0 +1,79 @@
+.category-dropdown {
+    cursor: pointer;
+    &:hover + .category-list {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.category-list {
+    transition: all .2s ease-in-out;
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    background: white;
+    border: 1px solid lightgrey;
+    padding: 5px;
+    z-index: 3;
+    top: 32px;
+    // right: -20px;
+    line-height: 40px;
+    padding: 0 15px;
+    
+    &:hover {
+        opacity: 1;
+        visibility: visible;
+    }
+    div {
+        transition: all .2s ease-in-out;
+        cursor: pointer;
+        &:hover {
+            opacity: .5;
+        }
+    }
+}
+
+.chat-item {
+    cursor: pointer;
+    transition: .2s ease-in-out;
+    &:hover {
+        color: #4f46e5;
+    }
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border: 1px solid black;
+    border-radius: 100%;
+    overflow: hidden;
+}
+
+.logo {
+    cursor: pointer;
+    img {
+        width: 100px;
+    }
+}
+
+@mixin skeletonShape() {
+    opacity: .7;
+    animation: skeleton-loading 1s linear infinite alternate;
+    border-radius: 8px;
+}
+
+.profile-pic-skeleton {
+    @include skeletonShape();
+    border-radius: 100% !important;
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

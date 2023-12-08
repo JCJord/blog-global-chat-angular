@@ -1,0 +1,9 @@
+<input class="d-none" type="file" #filePicker (change)="changeListener($event)" accept="image/*"/>
+
+<button
+class="btn btn-outline-secondary file-button"
+style="border: 1px solid;"
+(click)="filePicker.click()"
+>
+    Add a profile Picture
+</button>

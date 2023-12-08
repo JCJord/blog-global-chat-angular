@@ -1,0 +1,39 @@
+<nav class="py-3" style="width: 100%;">
+    <div class="mx-auto d-flex align-items-center justify-content-between" style="width: 90%;">
+        <div class="logo" (click)="goToHomePage()">
+            <img src="../../../assets/images/light-box.svg" alt="">
+        </div>
+        <div class="position-relative d-flex">
+            <div class="category-dropdown">
+                Categories
+            </div>
+            <div class="category-list d-flex flex-column">
+                <div *ngFor="let category of categories" (click)="goToCategoryPage(category.id)">
+                    {{category.name}}
+                </div>
+            </div>
+            <div class="position-relative ms-3 chat-item" [routerLink]="['/chat']">
+                Global Chat
+            </div>
+        </div>
+        <div class="d-flex align-items-center" *ngIf="userLoaded && username">
+            <span class="me-4">
+                <div class="profile-icon text-uppercase d-flex align-items-center justify-content-center" (click)="goToProfile()" >
+
+                    <img class="w-100 h-100" [src]="profilePic ? profilePic : '../../../assets/images/profile-pic-empty.webp'" alt="">
+                </div>
+            </span>
+            <div (click)="signOut()" style="cursor: pointer;">
+                Sign Out
+            </div>
+        </div>
+        <div *ngIf="!username && !isUserAuthenticated()" class="d-flex">
+            <div class="me-4" *ngIf="!username" [routerLink]="'/signin'" style="cursor: pointer;">
+                Sign In
+            </div>
+            <div *ngIf="!isUserAuthenticated()" [routerLink]="'/signup'" style="cursor: pointer;">
+                Sign Up
+            </div>
+        </div>
+    </div>
+</nav>

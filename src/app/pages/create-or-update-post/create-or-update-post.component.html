@@ -1,0 +1,33 @@
+<form [formGroup]="postForm" class="container mt-5">
+    <h1 class="mb-4">Create Post</h1>
+
+    <div class="mb-3">
+      <app-text-input name="title" label="Post title" ></app-text-input>
+    </div>
+
+    <div class="mb-3">
+        <editor
+        #editor
+        formControlName="content"
+        [init]="{
+          height: 500,
+          menubar: false,
+          plugins: [
+            'advlist autolink lists link image charmap print preview anchor',
+            'searchreplace visualblocks code fullscreen',
+            'insertdatetime media table paste code help wordcount'
+          ],
+          toolbar:
+            'undo redo | formatselect | bold italic backcolor | \
+            alignleft aligncenter alignright alignjustify | \
+            bullist numlist outdent indent | removeformat | help'
+        }"
+      ></editor>
+        <!-- <app-text-input name="content" label="Post Content" ></app-text-input> -->
+    </div>
+    <div class="mb-3">
+        <app-select-input name="category" [options]="categoriesList"></app-select-input>
+    </div>
+    
+    <button class="w-100 btn btn-primary" [disabled]="postForm.invalid" (click)="isFormUpdate() ? updatePost() : createPost()">Submit</button>
+</form>

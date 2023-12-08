@@ -1,0 +1,40 @@
+<div class="container">
+    <div *ngIf="!isLoading" class="mx-auto pb-4 mt-3 border-t border-gray-200 pt-3 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+        <article class="flex flex-col items-start justify-between">
+        <div class="flex justify-between w-100">
+            <div class="flex items-center gap-x-4 text-xs">
+                <time datetime="2020-03-16" class="text-gray-500">
+                    {{convertDateFormat(post.createdAt)}}
+                </time>
+                <a class="relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100" (click)="goToCategoryPage(post.category.id)">{{post.category.name}}</a>
+            </div>
+        </div>
+        
+          <div class="group relative w-100">
+            <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex justify-between w-100">
+              <a (click)="goToPostPage(post.id)">
+                <span class="absolute inset-0"></span>
+                {{post.title}}
+              </a>
+            </h3>
+            <p class="mt-5 line-clamp-3 text-sm leading-6 text-gray-600" [innerHTML]="post.content">
+            </p>
+          </div>
+
+          <div class="relative mt-8 flex items-center gap-x-4">
+            <img [src]="post.user.avatar != undefined ? post.user.avatar : '../../../assets/images/profile-pic-empty.webp'" alt="" class="h-10 w-10 rounded-full bg-gray-50">
+            <div class="text-sm leading-6">
+              <p class="font-semibold text-gray-900">
+                <a href="#">
+                  <span class="absolute inset-0"></span>
+                  {{post.user.username}}
+                </a>
+              </p>
+              <p class="text-gray-600">Common User</p>
+            </div>
+          </div>
+        </article>
+    </div>
+    <app-posts-skeleton *ngIf="isLoading" [skeletonToDisplay]="'single'">
+    </app-posts-skeleton>
+</div>

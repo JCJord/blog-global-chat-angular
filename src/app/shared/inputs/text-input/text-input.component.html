@@ -1,0 +1,6 @@
+<div>
+    <label for="exampleInputEmail1" class="form-label">{{label}}</label>
+
+    <input type="text" class="form-control" [ngClass]="{'is-valid': !hasError() && validAlert, 'is-invalid': hasError()}" [formControl]="control" />
+</div>
+<div *ngIf="hasError()" style="color: #dc3545;"  id="{{ id + '-feedback' }}">{{ getErrorMessage() }}</div>

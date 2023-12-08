@@ -1,0 +1,52 @@
+@mixin skeletonShape() {
+    opacity: .7;
+    animation: skeleton-loading 1s linear infinite alternate;
+    border-radius: 8px;
+}
+
+.skeleton-posts {
+    .date-and-category-skeleton {
+        width: 60px;
+        height: 20px;
+        @include skeletonShape();
+    }
+
+    .title-skeleton {
+        width: 185px;
+        height: 20px;
+        @include skeletonShape();
+    }
+    
+    .username-skeleton {
+        width: 80px;
+        height: 20px;
+        margin-top: 14px;
+        @include skeletonShape();
+    }
+
+    .content-skeleton {
+        width: 100%;
+        height: 18px;
+        opacity: .7;
+        margin-bottom: 14px;
+        @include skeletonShape();
+    }
+
+    .profile-pic-skeleton {
+        width: 40px;
+        height: 40px;
+        opacity: .7;
+        border-radius: 100% !important;
+        @include skeletonShape();
+    }
+}
+
+@keyframes skeleton-loading {
+    0% {
+        background-color: hsl(200, 20%, 70%);
+    }
+
+    100% {
+        background-color: hsl(200, 20%, 95%);
+    }
+}

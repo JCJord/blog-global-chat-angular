@@ -1,0 +1,93 @@
+<div *ngIf="skeletonToDisplay == 'multiple'">
+  <ng-container *ngFor="let item of ['Item 1', 'Item 2', 'Item 3']">
+    <div class="skeleton-posts mx-auto mt-3 border-t border-gray-200 pt-3 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <article class="flex flex-col items-start justify-between">
+        <div class="flex justify-between w-100">
+            <div class="flex items-center gap-x-4 text-xs">
+                <time class="date-and-category-skeleton">
+                </time>
+                <a class="date-and-category-skeleton relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+  
+                </a>
+            </div>
+        </div>
+        <div class="group relative w-100">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex justify-between w-100">
+            <a class="title-skeleton mb-4">
+              <span class="absolute inset-0"></span>
+            </a>
+          </h3>
+          <div class="w-100">
+            <div class="content-skeleton">
+  
+            </div>
+            <div class="content-skeleton">
+  
+            </div>
+            <div class="content-skeleton">
+  
+            </div>
+          </div>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4">
+  
+          <div alt="" class="profile-pic-skeleton h-10 w-10 rounded-full bg-gray-50">
+          </div>
+          <div class="username-skeleton text-sm leading-6">
+            <p class="font-semibold text-gray-900">
+            </p>
+            <p class="date-and-category-skeleton text-gray-600"></p>
+          </div>
+        </div>
+      </article>
+      <!-- More posts... -->
+    </div>
+  </ng-container>
+</div>
+
+<div *ngIf="skeletonToDisplay == 'single'">
+  <ng-container *ngFor="let item of ['Item 1']">
+    <div class="skeleton-posts mx-auto mt-3 border-t border-gray-200 pt-3 sm:mt-16 sm:pt-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      <article class="flex flex-col items-start justify-between">
+      <div class="flex justify-between w-100">
+          <div class="flex items-center gap-x-4 text-xs">
+              <time class="date-and-category-skeleton">
+              </time>
+              <a class="date-and-category-skeleton relative z-10 rounded-full bg-gray-50 px-3 py-1.5 font-medium text-gray-600 hover:bg-gray-100">
+  
+              </a>
+          </div>
+      </div>
+        <div class="group relative w-100">
+          <h3 class="mt-3 text-lg font-semibold leading-6 text-gray-900 group-hover:text-gray-600 flex justify-between w-100">
+            <a class="title-skeleton mb-4">
+              <span class="absolute inset-0"></span>
+            </a>
+          </h3>
+          <div class="w-100">
+            <div class="content-skeleton">
+  
+            </div>
+            <div class="content-skeleton">
+  
+            </div>
+            <div class="content-skeleton">
+  
+            </div>
+          </div>
+        </div>
+        <div class="relative mt-8 flex items-center gap-x-4">
+  
+          <div alt="" class="profile-pic-skeleton h-10 w-10 rounded-full bg-gray-50">
+          </div>
+          <div class="username-skeleton text-sm leading-6">
+            <p class="font-semibold text-gray-900">
+            </p>
+            <p class="date-and-category-skeleton text-gray-600"></p>
+          </div>
+        </div>
+      </article>
+      <!-- More posts... -->
+    </div>
+  </ng-container>
+</div>
